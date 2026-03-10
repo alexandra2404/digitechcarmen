@@ -1,12 +1,9 @@
-# ============================================================
-# ACTIVIDAD 3 - Cifrado César
-# Python y Ciberseguridad
-# ============================================================
 
+""" ACTIVIDAD 3 - Cifrado César
+Python y Ciberseguridad
 
-# ------------------------------------------------------------
-# PARTE 1: Función para cifrar una letra usando el Cifrado César
-# ------------------------------------------------------------
+PARTE 1: Función para cifrar una letra usando el Cifrado César
+"""
 
 def cifrar_letra(letra, desplazamiento):
     """
@@ -24,7 +21,7 @@ def cifrar_letra(letra, desplazamiento):
         raise ValueError("El desplazamiento debe estar entre 1 y 25.")
 
     # Convertimos la letra a su posición numérica (0-25) usando ord() y restando 65
-    # ord('A') = 65, por eso restamos 65
+    # ord('A') = 65, por eso restamos 65 porque lo hice con el codigo ascii
     posicion = ord(letra) - 65
 
     # Aplicamos el desplazamiento con módulo 26 para que sea circular (Z -> A)
@@ -36,9 +33,8 @@ def cifrar_letra(letra, desplazamiento):
     return letra_cifrada
 
 
-# ------------------------------------------------------------
 # PARTE 2: Funciones donde se cifran y descifran los mensajes completos
-# ------------------------------------------------------------
+
 
 def cifrar_mensaje(mensaje, desplazamiento):
     """
@@ -52,7 +48,7 @@ def cifrar_mensaje(mensaje, desplazamiento):
     Retorna:
         str: El mensaje cifrado
     """
-    # Convertimos el mensaje a mayúsculas para uniformidad
+    # Convertimos el mensaje a mayúsculas 
     mensaje = mensaje.upper()
 
     mensaje_cifrado = ""
@@ -84,16 +80,15 @@ def descifrar_mensaje(mensaje_cifrado, desplazamiento):
     return cifrar_mensaje(mensaje_cifrado, 26 - desplazamiento)
 
 
-# ------------------------------------------------------------
 # PARTE 3: Programa principal para interactuar con el usuario
-# ------------------------------------------------------------
+
 
 def main():
     print("=" * 50)
     print("       CIFRADO CÉSAR - Python y Ciberseguridad")
     print("=" * 50)
 
-    # Pedimos el mensaje al usuario
+    # Pedimos el mensaje al usuario con el input
     mensaje = input("\nIntroduce el mensaje a cifrar: ")
 
     # Pedimos el desplazamiento con validación
@@ -121,4 +116,5 @@ def main():
 
 # Ejecutamos el programa principal
 if __name__ == "__main__":
+
     main()
